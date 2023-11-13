@@ -24,6 +24,10 @@ console.log('Data saved to databaae', result.value);
 };
 
 // TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+export const getDb = async () => {
+  const txtEditorDB = await openDB('jate', 'readonly');
+  const storeVar = trasnVar.objectStore('jate');
+
+}
 
 initdb();
