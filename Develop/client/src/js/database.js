@@ -27,7 +27,11 @@ console.log('Data saved to databaae', result.value);
 export const getDb = async () => {
   const txtEditorDB = await openDB('jate', 'readonly');
   const storeVar = trasnVar.objectStore('jate');
-
+const request = storeVar.get(1);
+const result = await request;
+result 
+? console.log('Data retireved from the database', result.value)
+: console.log('Data not found in the database');
 }
 
 initdb();

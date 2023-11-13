@@ -18,6 +18,22 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      newHtmlWebPlugin({
+        template: './index.html',
+        title: 'JATE'
+      }),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest:'./src-sw.js'
+      }),
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
+        description: "This application install 'Just  Another Text Editor or 'JATE'for short",
+        
+      })
       
     ],
 
